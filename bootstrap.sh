@@ -16,7 +16,7 @@ cd "$(dirname "$0")"
 
 for i in `find . -type f -name ".*"`; do
 	DOTFILE=`basename "$i"`
-	if [ -e $HOME/$DOTFILE ]; then
+	if [[ -f $HOME/$DOTFILE && ! -f $HOME/${DOTFILE}_bkup ]]; then
 		echo "${warn}$HOME/$DOTFILE already existed, backing it up to $HOME/$DOTFILE_bkup before clobbering it${reset}"
 		cp $HOME/$DOTFILE "$HOME/${DOTFILE}_bkup"
 	fi
