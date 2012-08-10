@@ -14,11 +14,11 @@ failure=${bold}${red}
 
 cd "$(dirname "$0")"
 
-for i in `find . -type f -name ".*"`; do
+for i in `find . -name ".*" | grep -v "\.git\|\.$"`; do
 	DOTFILE=`basename "$i"`
-	if [[ -f $HOME/$DOTFILE && ! -f $HOME/${DOTFILE}_bkup ]]; then
-		echo "${warn}$HOME/$DOTFILE already existed, backing it up to $HOME/$DOTFILE_bkup before clobbering it${reset}"
-		cp $HOME/$DOTFILE "$HOME/${DOTFILE}_bkup"
+	if [[ -e $HOME/$DOTFILE && ! -e $HOME/${DOTFILE}_bkup ]]; then
+		echo "${warn}$HOME/$DOTFILE already existed, backing it up to $HOME/${DOTFILE}_bkup before clobbering it${reset}"
+		mv $HOME/$DOTFILE $HOME/${DOTFILE}_bkup
 	fi
 	ln -sf ${PWD}/$DOTFILE $HOME/$DOTFILE
 done
