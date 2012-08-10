@@ -29,5 +29,3 @@ set expandtab
 filetype plugin on "What is this? (RJG)
 filetype indent on "What is this? (RJG)
 
-set nowrap
-set linebreak
