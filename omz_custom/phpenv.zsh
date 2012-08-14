@@ -1,1 +1,1 @@
-export PATH=~/.phpenv/bin:$PATH
+export PATH=~/Library/phpenv/bin:$PATH
