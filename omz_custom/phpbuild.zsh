@@ -1,1 +1,1 @@
-export PATH=~/Library/phpbuild/bin:$PATH
+export PATH=$PATH:~/Library/phpbuild/bin
