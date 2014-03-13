@@ -1,1 +1,1 @@
-export PATH=$PATH:~/Library/phpenv/bin:~/Library/phpenv/shims
+export PATH=~/Library/phpenv/bin:~/Library/phpenv/shims:$PATH
