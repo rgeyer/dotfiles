@@ -5,6 +5,7 @@ export PATH=$PATH:$GOPATH
 gosandbox() { 
   version="latest"
   [[ -n "$1" ]] && version=$1
-  docker run --rm -it -v $(pwd):/go$(pwd | sed "s,$GOPATH,,g") golang:$version bash 
+  project_path=/go$(pwd | sed "s,$GOPATH,,g")
+  docker run --rm -it -v $(pwd):/$project_path -w $project_path golang:$version bash 
 }
 
