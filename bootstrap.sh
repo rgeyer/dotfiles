@@ -23,12 +23,12 @@ for i in `find . -name ".*" | grep -v "\.git\|\.$"`; do
 	ln -sf ${PWD}/$DOTFILE $HOME/$DOTFILE
 done
 
-if [ -d $HOME/.omz ]; then
+if [ -d $HOME/.oh-my-zsh ]; then
   cd "$(dirname "$0")/omz_custom"
   for i in `find . | grep -v "\.$"`; do
     DOTCUSTOMFILE=`basename "$i"`
-    CUSTOMFILE=$HOME/.omz/custom/$DOTCUSTOMFILE
-    CUSTOMFILEBKUP=$HOME/.omz/custom/${DOTCUSTOMFILE}_bkup
+    CUSTOMFILE=$HOME/.oh-my-zsh/custom/$DOTCUSTOMFILE
+    CUSTOMFILEBKUP=$HOME/.oh-my-zsh/custom/${DOTCUSTOMFILE}_bkup
     if [[ -e $CUSTOMFILE && ! -e $CUSTOMFILEBKUP ]]; then
       echo "${warn}$CUSTOMFILE already existed, backing it up to $CUSTOMFILEBKUP before clobbering it${reset}"
       mv $CUSTOMFILE $CUSTOMFILEBKUP
