@@ -1,6 +1,6 @@
 export GOPATH=$(go env GOPATH)
 export GOROOT=$(go env GOROOT)
-export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOPATH/bin
 
 gosandbox() { 
   version="latest"
