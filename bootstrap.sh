@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 bold=$(tput bold)
 red=$(tput setaf 1)
