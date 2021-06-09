@@ -21,7 +21,7 @@ Did I mention I'm new to this?
 Yeah so, you'll find a lot of stuff that's blatantly copied from other great dotfile projects (I'll point them out in the references below, and in comments where appropriate), as well as stuff that I completely, or partly don't understand.
 
 # References
-
+If you're on windows, do this - https://jeremyskinner.co.uk/2018/07/27/sharing-home-directory-between-windows-and-wsl/
 ## Source linkage
 * http://dotfiles.github.com/
 

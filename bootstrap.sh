@@ -20,6 +20,16 @@ for i in `find . -name ".*" | grep -v "\.git\|\.$"`; do
 		echo "${warn}$HOME/$DOTFILE already existed, backing it up to $HOME/${DOTFILE}_bkup before clobbering it${reset}"
 		mv $HOME/$DOTFILE $HOME/${DOTFILE}_bkup
 	fi
+  if [[ "$DOTFILE" = ".emacs.d" && -n "$WSL_DISTRO_NAME" ]]; then
+		echo $HOME/AppData/Roaming/$DOTFILE
+    # Special case for Windows Subsystem for Linux
+		if [[ -e $HOME/AppData/Roaming/$DOTFILE && ! -e $HOME/AppData/Roaming/${DOTFILE}_bkup ]]; then
+			echo "${warn}$HOME/AppData/Roaming/$DOTFILE already existed, backing it up to $HOME/AppData/Roaming/${DOTFILE}_bkup before clobbering it${reset}"
+			mv $HOME/AppData/Roaming/$DOTFILE $HOME/AppData/Roaming/${DOTFILE}_bkup
+		fi
+		# ln -sf ${PWD}/$DOTFILE $HOME/AppData/Roaming/$DOTFILE
+		echo "If you want your emacs config to be accessible from your windows emacs instance, go run bootstrap.ps using powershell also."
+	fi
 	ln -sf ${PWD}/$DOTFILE $HOME/$DOTFILE
 done
 
