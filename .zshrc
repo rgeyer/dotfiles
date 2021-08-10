@@ -65,10 +65,8 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  pyenv
-  pep8
-  pylint
-  virtualenv
+  golang
+  gcloud
 )
 
 source $ZSH/oh-my-zsh.sh
